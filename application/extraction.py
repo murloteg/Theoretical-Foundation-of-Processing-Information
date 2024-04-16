@@ -1,13 +1,13 @@
 import spacy
+import nltk
 
 from nltk.corpus import stopwords as sw
 from rake_nltk import Rake
 from yake import KeywordExtractor
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-# Использовать при первом запуске
-# nltk.download('punkt')
-# nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('stopwords')
 
 ru_pipeline = spacy.load("ru_core_news_lg")
 useless_symbols = set(sw.words('russian')).union(set(ru_pipeline.Defaults.stop_words))

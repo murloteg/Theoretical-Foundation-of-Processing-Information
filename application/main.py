@@ -13,7 +13,7 @@ def prepare_logger():
     info_logger.addHandler(handler)
 
 
-with open(file='resources/example-3.txt', mode='r') as file:
+with open(file='resources/example-2.txt', mode='r') as file:
     file_content = file.read()
 
 punctuation_marks = [".", ",", ":", ";", "?", "!", "\"", "'", "«", "»", "–", "-"]
