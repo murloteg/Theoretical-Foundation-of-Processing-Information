@@ -38,7 +38,7 @@ def extract_keywords_with_yake(*, text: str) -> list:
 def extract_keywords_with_tf_idf(*, text: str) -> list[str]:
     raw_docs = text.split('\n')
 
-    tfidf_vectorizer = TfidfVectorizer()
+    tfidf_vectorizer = TfidfVectorizer(stop_words=list(useless_symbols))
     values = tfidf_vectorizer.fit_transform(raw_docs)
 
     keywords_with_score = [[word, score] for word, score in zip(tfidf_vectorizer.get_feature_names_out(), values.toarray()[0])]
